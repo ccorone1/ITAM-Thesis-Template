@@ -13,6 +13,9 @@
 \usepackage{enumerate}
 \usepackage{hyperref} % Hipervínculos en el índice
 \usepackage{graphicx}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{,}{,} % Configuración para que luzca como Chicago (paréntesis, autor-año)
+
 %\usepackage{subfig} % Subfiguras
 \graphicspath{{Imagenes/}} % En qué carpeta están las imágenes
 
@@ -223,104 +226,25 @@
 
 \end{appendix}
 
+
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAFÍA
 %----------------------------------------------------------------------------------------
 
-
 \chapter*{Referencias}
 \addcontentsline{toc}{chapter}{Referencias}
 
-% Macro. Esto es muy importante, no lo borren
+% Define el estilo Chicago
+\bibliographystyle{chicago} 
 
-\makeatletter
-\renewenvironment{thebibliography}[1]
-     {\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-      \list{}%
-           {\setlength{\labelwidth}{0pt}%
-            \setlength{\labelsep}{0pt}%
-            \setlength{\leftmargin}{\parindent}%
-            \setlength{\itemindent}{-\parindent}%
-            \@openbib@code
-            \usecounter{enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
-\makeatother
+% Llama a tu archivo .bib (sin la extensión .bib)
+\bibliography{referencias} 
 
-\begin{thebibliography}{111}
+\newpage
 
-% Lista
-
-% La manera recomendada para citar papers o libros en el formato de Chicago esta en el siguiente vínculo: https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-2.html
-
-% Es importante poner el apellido del autor seguido del año de publicación, una coma y las páginas consultadas en el texto antes de puntuar y entre paréntesis para las citas en el cuerpo de la tesis
-
-% Ejemplo:
-
-% Las \textit{causas próximas} del crecimiento son conocidas: tecnología, capital humano y físico. La pregunta es ¿por qué unos países sí tienen estas causas próximas y otros no? La respuesta son las \textit{causas fundamentales:} suerte, geografía, cultura e instituciones (Acemoglu 2009, 110).
-
-%AAAAA
-\bibitem{abram57} Abramovitz, Moses. 1957. «Resources on Output Trends in the United States since 1870.» \textit{The American Economic Review} 46 (2): 5–23.
-
-\bibitem{acemoglu09} Acemoglu, Daron. 2009. \textit{Introduction to Modern Economic Growth.} Princeton: Princeton University Press.
-
-%BBBBB
-
-%CCCCC
-
-%DDDDD
-
-%EEEEE
-
-%FFFFF
-
-%GGGGG
-
-%HHHHH
-
-%IIIII
-
-%JJJJJ
-
-%KKKKK
-
-%LLLLL
-
-%MMMMM
-
-%NNNNN
-
-%OOOOO
-
-%PPPPP
-
-%QQQQQ
-
-%RRRRR
-
-%SSSSS
-
-%TTTTT
-
-%UUUUU
-
-%VVVVV
-
-%WWWWW
-
-%XXXXX
-
-%YYYYY
-
-%ZZZZZ
-
-\end{thebibliography}
+%----------------------------------------------------------------------------------------
+%	PÁGINA DE CRÉDITOS DE IMPRESIÓN
+%----------------------------------------------------------------------------------------   
 
 \newpage
 \thispagestyle{empty}
